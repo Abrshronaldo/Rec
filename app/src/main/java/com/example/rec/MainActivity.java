@@ -118,15 +118,22 @@ myButton.setOnClickListener(new View.OnClickListener() {
 
                 runOnUiThread(() -> tv.setText("sent: "));
 
-        }
-
- 
-   catch (IOException e) {
-   
-}
        
+ 
+  
         }).start();
+}
+
+
+
+catch (IOException e) {
+
+}
+
     }
+
+
+
 });
     
 
