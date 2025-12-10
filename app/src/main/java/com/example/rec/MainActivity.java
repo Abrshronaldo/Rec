@@ -104,31 +104,24 @@ ConstraintLayout.LayoutParams buttonParams = new ConstraintLayout.LayoutParams(
 myButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-    try{
+   
 
-        new Thread(() -> {
-           
 
-      Socket socket = new Socket("127.0.0.1", 5000); // connect to localhost
+
+new Thread(() -> {
+    try {
+        Socket socket = new Socket("127.0.0.1", 5000); // connect to localhost
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         out.println("Hello, localhost!");
         socket.close();
 
-               
-
-                runOnUiThread(() -> tv.setText("sent: "));
-
-       
- 
-  
-        }).start();
-}
+        runOnUiThread(() -> tv.setText("sent: "));
+    } catch (IOException e) {
+        e.printStackTrace(); // or handle error
+    }
+}).start();
 
 
-
-catch (IOException e) {
-
-}
 
     }
 
