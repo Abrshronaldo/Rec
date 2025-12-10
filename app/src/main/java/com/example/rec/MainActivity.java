@@ -104,6 +104,8 @@ ConstraintLayout.LayoutParams buttonParams = new ConstraintLayout.LayoutParams(
 myButton.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+    try{
+
         new Thread(() -> {
            
 
@@ -116,7 +118,13 @@ myButton.setOnClickListener(new View.OnClickListener() {
 
                 runOnUiThread(() -> tv.setText("sent: "));
 
-               
+        }
+
+ 
+   catch (IOException e) {
+   
+}
+       
         }).start();
     }
 });
