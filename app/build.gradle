@@ -1,0 +1,43 @@
+
+
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "com.example.Network"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.Rec"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters 'armeabi-v7a' // Add more ABIs if needed
+        }
+
+        }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs'] // Optional if you're manually placing .so files
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+       }
+         }
+   }
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.6.1"
+
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+
+}
+
+
+                                                                         
