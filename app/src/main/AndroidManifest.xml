@@ -7,7 +7,7 @@
     
     <application
         android:label="broadcast"
-       android:icon="@mipmap/rec"	      
+       android:icon="@mipmap/reca"	      
 
       android:theme="@style/AppTheme"
       android:extractNativeLibs="false">
