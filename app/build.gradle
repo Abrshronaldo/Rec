@@ -9,7 +9,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.Rec"
+        applicationId "com.example.rec"
         minSdk 21
         targetSdk 34
         versionCode 1
