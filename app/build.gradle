@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace "com.example.Network"
+    namespace "com.example.rec"
     compileSdk 34
 
     defaultConfig {
