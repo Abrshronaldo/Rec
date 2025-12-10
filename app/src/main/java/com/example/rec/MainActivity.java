@@ -110,7 +110,8 @@ myButton.setOnClickListener(new View.OnClickListener() {
 
 new Thread(() -> {
     try {
-        Socket socket = new Socket("127.0.0.1", 5000); // connect to localhost
+        Socket socket = new Socket("127.0.0.1", 8080;
+
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
         out.println("Hello, localhost!");
         socket.close();
