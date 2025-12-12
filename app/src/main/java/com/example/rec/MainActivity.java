@@ -132,7 +132,7 @@ char[] buffer = new char[1024];
 int len = in.read(buffer);
 String message = new String(buffer, 0, len);
 
-       if (message.equals("Go"){
+       if (message.equals("Go")){
 
 
                 runOnUiThread(() -> tv.setText("it was all a dreeam"));
