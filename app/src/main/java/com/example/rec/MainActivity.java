@@ -113,10 +113,37 @@ new Thread(() -> {
         Socket socket = new Socket("127.0.0.1", 8080);
 
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-        out.println("Hello, localhost!");
+        out.println("Go");
         socket.close();
 
         runOnUiThread(() -> tv.setText("sent: "));
+
+
+    runOnUiThread(() -> tv.setText("Server running on localhost:5000"));   >
+
+        ServerSocket serverSocket = new ServerSocket(8080);
+                Socket clientSocket = serverSocket.accept(); // blocks until >
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(clientSocket.getInputStream())
+                );
+
+
+char[] buffer = new char[1024];
+int len = in.read(buffer);
+String message = new String(buffer, 0, len);
+
+       if (message.equals("Go"){
+
+
+                runOnUiThread(() -> tv.setText("it was all a dreeam"));
+             }
+
+
+
+                clientSocket.close();
+                serverSocket.close();
+
+
     } catch (IOException e) {
         e.printStackTrace(); // or handle error
     }
