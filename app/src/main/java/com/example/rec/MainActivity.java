@@ -116,11 +116,10 @@ new Thread(() -> {
         out.println("Go");
         socket.close();
 
-        runOnUiThread(() -> tv.setText("sent: "));
-
+        
 
     runOnUiThread(() -> tv.setText("Server running on localhost:5000"));
-        ServerSocket serverSocket = new ServerSocket(8080);
+        ServerSocket serverSocket = new ServerSocket(5000);
                 Socket clientSocket = serverSocket.accept(); // blocks until >
                 BufferedReader in = new BufferedReader(
                         new InputStreamReader(clientSocket.getInputStream())
