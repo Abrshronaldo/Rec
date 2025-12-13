@@ -119,8 +119,7 @@ new Thread(() -> {
         runOnUiThread(() -> tv.setText("sent: "));
 
 
-    runOnUiThread(() -> tv.setText("Server running on localhost:5000"));   >
-
+    runOnUiThread(() -> tv.setText("Server running on localhost:5000"));
         ServerSocket serverSocket = new ServerSocket(8080);
                 Socket clientSocket = serverSocket.accept(); // blocks until >
                 BufferedReader in = new BufferedReader(
