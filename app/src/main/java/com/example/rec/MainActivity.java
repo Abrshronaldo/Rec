@@ -121,20 +121,14 @@ new Thread(() -> {
     runOnUiThread(() -> tv.setText("Server running on localhost:5000"));
         ServerSocket serverSocket = new ServerSocket(5000);
                 Socket clientSocket = serverSocket.accept(); // blocks until >
-                BufferedReader in = new BufferedReader(
-                        new InputStreamReader(clientSocket.getInputStream())
-                );
+               BufferedReader in = new BufferedReader(
+        new InputStreamReader(clientSocket.getInputStream())
+);
 
-
-char[] buffer = new char[1024];
-int len = in.read(buffer);
-String message = new String(buffer, 0, len);
-
-       if (message.equals("Go")){
-
-
-                runOnUiThread(() -> tv.setText("it was all a dreeam"));
-             }
+String message = in.readLine();  // reads until newline
+if ("Go".equals(message)) {
+    runOnUiThread(() -> tv.setText("it was all a dreeam"));
+}
 
 
 
